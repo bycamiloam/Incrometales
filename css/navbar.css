@@ -1,0 +1,54 @@
+/* ============================================================
+   navbar.css — Navbar & Top Strip
+   ============================================================ */
+
+#navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--surface-dark);
+  transition: box-shadow 0.3s ease;
+}
+
+#navbar.scrolled {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile menu hidden by default */
+#mobile-menu {
+  display: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+#mobile-menu.open {
+  display: flex;
+}
+
+/* Nav link hover */
+.nav-link {
+  color: white;
+  font-weight: 500;
+  transition: color 0.2s;
+  text-transform: capitalize;
+}
+
+.nav-link:hover {
+  color: var(--brand-cyan);
+}
+
+/* CTA Button */
+.btn-cta {
+  background: linear-gradient(90deg, var(--brand-cyan), var(--brand-blue));
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.25rem;
+  transition: opacity 0.2s;
+}
+
+.btn-cta:hover {
+  opacity: 0.9;
+}

@@ -1,0 +1,96 @@
+/* ============================================================
+   products.css — Products Section
+   ============================================================ */
+
+#productos {
+  background-color: var(--background);
+  padding: 6rem 1rem;
+}
+
+/* Product card */
+.product-card {
+  border: 1px solid var(--border);
+  background-color: var(--card);
+  padding: 1.75rem;
+  transition: box-shadow 0.3s, border-color 0.3s;
+  cursor: default;
+}
+
+.product-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-color: var(--brand-blue);
+}
+
+.product-card-icon {
+  color: var(--brand-blue);
+  margin-bottom: 1.25rem;
+  transition: transform 0.3s;
+}
+
+.product-card:hover .product-card-icon {
+  transform: scale(1.1);
+}
+
+.product-card h3 {
+  font-weight: 700;
+  color: var(--foreground);
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.product-card p {
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+/* Animated underline accent */
+.product-card-accent {
+  margin-top: 1.25rem;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--brand-cyan), var(--brand-blue));
+  transition: width 0.3s;
+}
+
+.product-card:hover .product-card-accent {
+  width: 2rem;
+}
+
+/* Clickable card link */
+a.product-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-card-link {
+  margin-top: 0.875rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--brand-blue);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.product-card:hover .product-card-link {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Bottom row centered (2 cards) */
+.products-bottom-row {
+  max-width: calc(66.67% + 10px);
+  margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .products-bottom-row {
+    max-width: 100%;
+  }
+}

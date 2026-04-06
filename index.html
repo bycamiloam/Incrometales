@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Incrometales — Exhibidores metálicos y estructuras comerciales</title>
+  <meta name="description" content="Más de 39 años fabricando exhibidores metálicos, góndolas y estructuras comerciales a la medida para empresas colombianas." />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- Custom CSS (orden importa: globals primero) -->
+  <link rel="stylesheet" href="css/globals.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/products.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/why-us.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <!-- Top strip -->
+  <div class="py-2 px-4 text-xs md:text-sm text-white"
+       style="background: linear-gradient(90deg, #13d3fd, #4f86f1);">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-center md:justify-between items-center gap-2 md:gap-6">
+      <span>39 años de experiencia</span>
+      <span class="hidden sm:inline">•</span>
+      <span>Fabricación a la medida</span>
+      <span class="hidden sm:inline">•</span>
+      <span class="hidden sm:inline">Proyectos corporativos</span>
+      <span class="hidden md:inline">•</span>
+      <span class="hidden md:inline">Envíos a todo Colombia</span>
+    </div>
+  </div>
+
+  <!-- Magenta divider -->
+  <div class="section-divider"></div>
+
+  <!-- Main navbar -->
+  <nav id="navbar">
+    <div class="max-w-7xl mx-auto px-4 py-3">
+      <div class="flex items-center justify-between">
+
+        <!-- Logo -->
+        <button onclick="scrollToSection('inicio')" class="flex items-center cursor-pointer">
+          <img src="public/logo.png"
+               alt="Incrometales"
+               class="h-12 w-auto object-contain"
+               width="180" height="56" />
+        </button>
+
+        <!-- Desktop navigation -->
+        <div class="hidden md:flex items-center gap-8">
+          <button onclick="scrollToSection('inicio')"   class="nav-link">Inicio</button>
+          <button onclick="scrollToSection('productos')" class="nav-link">Productos</button>
+          <button onclick="scrollToSection('nosotros')"  class="nav-link">Nosotros</button>
+          <button onclick="scrollToSection('contacto')"  class="nav-link">Contacto</button>
+          <button onclick="scrollToSection('contacto')"  class="btn-cta">Solicitar cotización</button>
+        </div>
+
+        <!-- Mobile menu toggle -->
+        <button id="menu-toggle" class="md:hidden p-2 text-white" aria-label="Abrir menú">
+          <i id="menu-icon-open"  data-lucide="menu" class="w-6 h-6"></i>
+          <i id="menu-icon-close" data-lucide="x"    class="w-6 h-6" style="display:none;"></i>
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="flex flex-col gap-4 pb-4">
+        <button onclick="scrollToSection('inicio')"    class="nav-link text-left">Inicio</button>
+        <button onclick="scrollToSection('productos')" class="nav-link text-left">Productos</button>
+        <button onclick="scrollToSection('nosotros')"  class="nav-link text-left">Nosotros</button>
+        <button onclick="scrollToSection('contacto')"  class="nav-link text-left">Contacto</button>
+        <button onclick="scrollToSection('contacto')"  class="btn-cta w-full">Solicitar cotización</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         HERO SECTION
+    ============================================================ -->
+    <section id="inicio">
+
+      <!-- Background slides (cross-fade) -->
+      <div class="hero-bg-slide" style="opacity:1;">
+        <img src="public/hero-pisos.jpg" alt="Pisos y Revestimientos" />
+        <div class="overlay-main"></div>
+        <div class="overlay-bottom"></div>
+      </div>
+      <div class="hero-bg-slide" style="opacity:0;">
+        <img src="public/hero-herramientas.jpg" alt="Ferretería y Herramientas" />
+        <div class="overlay-main"></div>
+        <div class="overlay-bottom"></div>
+      </div>
+      <div class="hero-bg-slide" style="opacity:0;">
+        <img src="public/hero-colchones.jpg" alt="Muebles para Colchones" />
+        <div class="overlay-main"></div>
+        <div class="overlay-bottom"></div>
+      </div>
+      <div class="hero-bg-slide" style="opacity:0;">
+        <img src="public/hero-alimentos.jpg" alt="Alimentos y Supermercados" />
+        <div class="overlay-main"></div>
+        <div class="overlay-bottom"></div>
+      </div>
+
+      <!-- Gradient accent bottom line -->
+      <div class="hero-accent-line"></div>
+
+      <!-- Content -->
+      <div class="hero-content">
+        <div class="hero-inner">
+
+          <!-- Category tag -->
+          <div id="hero-tag-wrapper" class="hero-tag animate-fade-in">
+            <div class="hero-tag-line"></div>
+            <span id="hero-category"></span>
+          </div>
+
+          <!-- Headline -->
+          <h1 id="hero-title" class="animate-fade-in"></h1>
+
+          <!-- Description -->
+          <p id="hero-desc" class="animate-fade-in"></p>
+
+          <!-- CTAs -->
+          <div class="hero-ctas">
+            <button onclick="scrollToSection('contacto')" class="btn-hero-primary">
+              Solicitar cotización
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+            <button onclick="scrollToSection('productos')" class="btn-hero-outline">
+              Ver productos
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide controls -->
+      <div class="hero-controls">
+        <button id="hero-prev" class="hero-control-btn" aria-label="Anterior">
+          <i data-lucide="chevron-left" class="w-5 h-5"></i>
+        </button>
+        <button id="hero-next" class="hero-control-btn" aria-label="Siguiente">
+          <i data-lucide="chevron-right" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Category tabs -->
+      <div class="hero-tabs">
+        <button class="hero-tab active" aria-label="Pisos y Revestimientos">Pisos</button>
+        <button class="hero-tab"        aria-label="Ferretería y Herramientas">Ferretería</button>
+        <button class="hero-tab"        aria-label="Muebles para Colchones">Muebles</button>
+        <button class="hero-tab"        aria-label="Alimentos y Supermercados">Alimentos</button>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="hero-progress-track">
+        <div id="hero-progress-bar"></div>
+      </div>
+
+    </section>
+
+    <!-- Magenta divider -->
+    <div class="section-divider"></div>
+
+
+    <!-- ============================================================
+         PRODUCTS SECTION
+    ============================================================ -->
+    <section id="productos">
+      <div class="max-w-7xl mx-auto">
+
+        <!-- Header -->
+        <div class="mb-14">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-0.5" style="background: linear-gradient(90deg, #13d3fd, #4f86f1);"></div>
+            <span class="text-sm font-semibold tracking-widest uppercase brand-gradient-text">Catálogo</span>
+          </div>
+          <h2 class="text-4xl md:text-5xl font-bold text-foreground text-balance mb-3">Nuestras soluciones</h2>
+          <p class="text-muted-foreground text-lg text-pretty">Estructuras que organizan, exhiben y venden.</p>
+        </div>
+
+        <!-- Cards — top 3 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5">
+
+          <a href="gondolas.html" class="product-card">
+            <div class="product-card-icon">
+              <i data-lucide="layout-grid" class="w-7 h-7" style="stroke-width:1.5;"></i>
+            </div>
+            <h3>Exhibidores de Tablero Góndola</h3>
+            <p>Modularidad que organiza. Diseño que vende. Estructuras versátiles para puntos de venta dinámicos.</p>
+            <div class="product-card-accent"></div>
+            <div class="product-card-link">Ver detalle <i data-lucide="arrow-right" class="w-3 h-3"></i></div>
+          </a>
+
+          <a href="rollos.html" class="product-card">
+            <div class="product-card-icon">
+              <i data-lucide="cylinder" class="w-7 h-7" style="stroke-width:1.5;"></i>
+            </div>
+            <h3>Exhibidores de Rollos</h3>
+            <p>Orden inteligente. Acceso práctico. Exhibición funcional que optimiza el espacio.</p>
+            <div class="product-card-accent"></div>
+            <div class="product-card-link">Ver detalle <i data-lucide="arrow-right" class="w-3 h-3"></i></div>
+          </a>
+
+          <a href="multitarea.html" class="product-card">
+            <div class="product-card-icon">
+              <i data-lucide="settings-2" class="w-7 h-7" style="stroke-width:1.5;"></i>
+            </div>
+            <h3>Exhibidores Multitarea</h3>
+            <p>Un diseño. Múltiples funciones. Exhibición que se adapta a alimentos, productos y mobiliario comercial.</p>
+            <div class="product-card-accent"></div>
+            <div class="product-card-link">Ver detalle <i data-lucide="arrow-right" class="w-3 h-3"></i></div>
+          </a>
+        </div>
+
+        <!-- Cards — bottom 2 (centered) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 products-bottom-row">
+
+          <a href="ceramicas.html" class="product-card">
+            <div class="product-card-icon">
+              <i data-lucide="layers-3" class="w-7 h-7" style="stroke-width:1.5;"></i>
+            </div>
+            <h3>Exhibidores para Cerámicas y Pisos Laminados</h3>
+            <p>Resistencia que soporta. Diseño que exhibe. Soluciones pensadas para comparar, elegir y decidir mejor.</p>
+            <div class="product-card-accent"></div>
+            <div class="product-card-link">Ver detalle <i data-lucide="arrow-right" class="w-3 h-3"></i></div>
+          </a>
+
+          <a href="showrooms.html" class="product-card">
+            <div class="product-card-icon">
+              <i data-lucide="monitor-check" class="w-7 h-7" style="stroke-width:1.5;"></i>
+            </div>
+            <h3>Showrooms y Stands</h3>
+            <p>Espacios que comunican marca. Estructuras que generan impacto. Diseño estratégico para destacar donde importa.</p>
+            <div class="product-card-accent"></div>
+            <div class="product-card-link">Ver detalle <i data-lucide="arrow-right" class="w-3 h-3"></i></div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Magenta divider -->
+    <div class="section-divider"></div>
+
+
+    <!-- ============================================================
+         ABOUT SECTION
+    ============================================================ -->
+    <section id="nosotros">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+          <!-- Left: Text -->
+          <div>
+            <div class="flex items-center gap-2 mb-4">
+              <div class="w-8 h-0.5" style="background: linear-gradient(90deg, #13d3fd, #4f86f1);"></div>
+              <span class="text-sm font-semibold tracking-widest uppercase brand-gradient-text">Nosotros</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-foreground text-balance mb-6 leading-tight">
+              Más de 39 años construyendo herramientas de crecimiento
+            </h2>
+            <div class="space-y-4 text-muted-foreground leading-relaxed text-base">
+              <p>En Incrometales llevamos más de 39 años transformando ideas en soluciones reales para el punto de venta. Somos especialistas en el diseño y fabricación de exhibidores metálicos, góndolas, vitrinas y estructuras comerciales que no solo organizan productos, sino que impulsan su rotación y fortalecen la presencia de marca.</p>
+              <p>Trabajamos de la mano con empresas líderes del mercado, desarrollando proyectos a la medida que combinan ingeniería, funcionalidad y estrategia comercial.</p>
+              <p class="font-medium text-foreground">Cada estructura que fabricamos tiene un propósito claro: hacer que el producto destaque, conecte y venda.</p>
+            </div>
+          </div>
+
+          <!-- Right: Stat blocks -->
+          <div class="flex flex-col gap-4">
+            <div class="stat-block">
+              <div class="stat-value">39+</div>
+              <div>
+                <div class="stat-label">Años de experiencia en el sector</div>
+                <div class="stat-sublabel">Desde 1986 fabricando para Colombia</div>
+              </div>
+            </div>
+            <div class="stat-block">
+              <div class="stat-value">100%</div>
+              <div>
+                <div class="stat-label">Proyectos completamente a la medida</div>
+                <div class="stat-sublabel">Adaptados a cada cliente y espacio</div>
+              </div>
+            </div>
+            <div class="stat-block">
+              <div class="stat-value">Décadas</div>
+              <div>
+                <div class="stat-label">De calidad respaldada</div>
+                <div class="stat-sublabel">Por las marcas líderes del mercado colombiano</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Magenta divider -->
+    <div class="section-divider"></div>
+
+
+    <!-- ============================================================
+         WHY US SECTION
+    ============================================================ -->
+    <section id="por-que-nosotros" class="industrial-pattern">
+      <div class="max-w-7xl mx-auto">
+
+        <!-- Header -->
+        <div class="mb-14 text-center">
+          <div class="flex items-center justify-center gap-2 mb-4">
+            <div class="w-8 h-0.5" style="background: linear-gradient(90deg, #13d3fd, #4f86f1);"></div>
+            <span class="text-sm font-semibold tracking-widest uppercase text-white">Diferencial</span>
+            <div class="w-8 h-0.5" style="background: linear-gradient(90deg, #4f86f1, #13d3fd);"></div>
+          </div>
+          <h2 class="text-4xl md:text-5xl font-bold text-white text-balance">¿Por qué elegir Incrometales?</h2>
+        </div>
+
+        <!-- Feature cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+          <div class="feature-card">
+            <div class="feature-card-icon">
+              <i data-lucide="cog" class="w-7 h-7" style="stroke-width:1.5;"></i>
+            </div>
+            <h3>Ingeniería de precisión</h3>
+            <p>Cada estructura es diseñada con rigor técnico para garantizar durabilidad y funcionalidad.</p>
+            <div class="feature-card-accent"></div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card-icon">
+              <i data-lucide="pen-tool" class="w-7 h-7" style="stroke-width:1.5;"></i>
+            </div>
+            <h3>Fabricación a la medida</h3>
+            <p>Desarrollamos proyectos personalizados según las necesidades específicas de cada cliente.</p>
+            <div class="feature-card-accent"></div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card-icon">
+              <i data-lucide="trending-up" class="w-7 h-7" style="stroke-width:1.5;"></i>
+            </div>
+            <h3>Estrategia comercial</h3>
+            <p>Nuestras soluciones están pensadas para impulsar la rotación y visibilidad del producto.</p>
+            <div class="feature-card-accent"></div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card-icon">
+              <i data-lucide="shield-check" class="w-7 h-7" style="stroke-width:1.5;"></i>
+            </div>
+            <h3>39 años de respaldo</h3>
+            <p>Tres décadas de experiencia nos avalan como líderes en el sector de exhibición comercial.</p>
+            <div class="feature-card-accent"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Magenta divider -->
+    <div class="section-divider"></div>
+
+
+    <!-- ============================================================
+         CONTACT SECTION
+    ============================================================ -->
+    <section id="contacto">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <div class="flex items-center justify-center gap-2 mb-4">
+          <div class="w-8 h-0.5" style="background: linear-gradient(90deg, #13d3fd, #4f86f1);"></div>
+          <span class="text-sm font-semibold tracking-widest uppercase brand-gradient-text">Contacto</span>
+          <div class="w-8 h-0.5" style="background: linear-gradient(90deg, #4f86f1, #13d3fd);"></div>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-bold text-foreground text-balance mb-3">¿Listo para potenciar tu punto de venta?</h2>
+        <p class="text-muted-foreground text-lg text-pretty">Cuéntanos tu proyecto. Diseñamos la solución.</p>
+      </div>
+
+      <div class="max-w-2xl mx-auto">
+
+        <!-- Success state -->
+        <div id="contact-success">
+          <i data-lucide="check-circle" class="w-14 h-14 mx-auto mb-5" style="color:#4f86f1; stroke-width:1.5;"></i>
+          <h3 class="text-2xl font-bold text-foreground mb-2">¡Solicitud enviada!</h3>
+          <p class="text-muted-foreground">Gracias por contactarnos. Un asesor de Incrometales se pondrá en contacto contigo a la brevedad.</p>
+        </div>
+
+        <!-- Form -->
+        <form id="contact-form" class="contact-form-wrapper space-y-5">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label class="form-label" for="nombre">Nombre</label>
+              <input id="nombre" name="nombre" type="text" placeholder="Tu nombre completo" required class="form-input" />
+            </div>
+            <div>
+              <label class="form-label" for="empresa">Empresa</label>
+              <input id="empresa" name="empresa" type="text" placeholder="Nombre de tu empresa" required class="form-input" />
+            </div>
+          </div>
+          <div>
+            <label class="form-label" for="telefono">Teléfono</label>
+            <input id="telefono" name="telefono" type="tel" placeholder="Ej: 300 000 0000" required class="form-input" />
+          </div>
+          <div>
+            <label class="form-label" for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos sobre tu proyecto..." required class="form-textarea"></textarea>
+          </div>
+          <button type="submit" class="btn-submit">
+            <i data-lucide="send" class="w-4 h-4"></i>
+            Enviar solicitud
+          </button>
+        </form>
+
+        <!-- Contact info cards -->
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="contact-info-card">
+            <div class="contact-info-icon">
+              <i data-lucide="phone" class="w-5 h-5" style="stroke-width:1.5;"></i>
+            </div>
+            <div>
+              <div class="contact-info-label">Línea principal</div>
+              <div class="contact-info-value">601 840 8810</div>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-info-icon">
+              <i data-lucide="phone" class="w-5 h-5" style="stroke-width:1.5;"></i>
+            </div>
+            <div>
+              <div class="contact-info-label">Móvil</div>
+              <div class="contact-info-value">300 208 3904</div>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-info-icon">
+              <i data-lucide="map-pin" class="w-5 h-5" style="stroke-width:1.5;"></i>
+            </div>
+            <div>
+              <div class="contact-info-label">Ubicación</div>
+              <div class="contact-info-value">Colombia</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer role="contentinfo">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12">
+
+        <!-- Brand -->
+        <div class="lg:col-span-1">
+          <div class="mb-4">
+            <img src="public/logo.png" alt="Incrometales" class="h-12 w-auto object-contain" width="160" height="50" />
+          </div>
+          <p class="text-white/60 text-sm leading-relaxed italic">"Impulsamos marcas, creamos visibilidad."</p>
+        </div>
+
+        <!-- Navigation -->
+        <div>
+          <h4 class="font-bold text-sm tracking-widest uppercase mb-5 brand-gradient-text">Navegación</h4>
+          <ul class="space-y-2.5">
+            <li><button onclick="scrollToSection('inicio')"    class="footer-nav-link">Inicio</button></li>
+            <li><button onclick="scrollToSection('productos')" class="footer-nav-link">Productos</button></li>
+            <li><button onclick="scrollToSection('nosotros')"  class="footer-nav-link">Nosotros</button></li>
+            <li><button onclick="scrollToSection('contacto')"  class="footer-nav-link">Contacto</button></li>
+          </ul>
+        </div>
+
+        <!-- Products -->
+        <div>
+          <h4 class="font-bold text-sm tracking-widest uppercase mb-5 brand-gradient-text">Productos</h4>
+          <ul class="space-y-2.5 text-white/60 text-sm">
+            <li>Exhibidores de Tablero Góndola</li>
+            <li>Exhibidores de Rollos</li>
+            <li>Exhibidores Multitarea</li>
+            <li>Cerámicas y Pisos Laminados</li>
+            <li>Showrooms y Stands</li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="font-bold text-sm tracking-widest uppercase mb-5 brand-gradient-text">Contacto</h4>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-2 text-white/60 text-sm">
+              <i data-lucide="phone" class="w-4 h-4 flex-shrink-0" style="color:#13d3fd; stroke-width:1.5;"></i>
+              601 840 8810
+            </li>
+            <li class="flex items-center gap-2 text-white/60 text-sm">
+              <i data-lucide="phone" class="w-4 h-4 flex-shrink-0" style="color:#13d3fd; stroke-width:1.5;"></i>
+              300 208 3904
+            </li>
+            <li class="flex items-center gap-2 text-white/60 text-sm">
+              <i data-lucide="map-pin" class="w-4 h-4 flex-shrink-0" style="color:#13d3fd; stroke-width:1.5;"></i>
+              Colombia
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="footer-bottom">
+        <p class="text-white/40 text-xs">© 2026 Incrometales. Todos los derechos reservados.</p>
+        <div class="w-8 h-0.5" style="background: linear-gradient(90deg, #13d3fd, #4f86f1);"></div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       WHATSAPP FLOATING BUTTON
+  ============================================================ -->
+  <div id="whatsapp-container">
+
+    <!-- Popup bubble -->
+    <div id="whatsapp-popup">
+      <!-- Header -->
+      <div class="wa-popup-header">
+        <div class="flex items-center gap-3">
+          <div class="wa-popup-avatar">
+            <i data-lucide="message-circle" class="w-5 h-5 text-white"></i>
+          </div>
+          <div>
+            <p class="text-white font-semibold text-sm leading-tight">Incrometales</p>
+            <p class="text-white/80 text-xs">Usualmente responde en minutos</p>
+          </div>
+        </div>
+        <button id="wa-close-btn" aria-label="Cerrar chat" class="text-white/80 hover:text-white transition-colors">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- Body -->
+      <div class="wa-popup-body">
+        <div class="wa-bubble">
+          ¡Hola! Bienvenido a <strong>Incrometales</strong>. ¿En qué podemos ayudarte hoy?
+          <div class="wa-bubble-time">ahora</div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="wa-popup-cta">
+        <button id="wa-chat-btn" class="wa-chat-btn">
+          <svg viewBox="0 0 24 24" class="w-5 h-5 fill-white" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Iniciar chat en WhatsApp
+        </button>
+      </div>
+    </div>
+
+    <!-- FAB button -->
+    <button id="whatsapp-fab" aria-label="Chatear por WhatsApp">
+      <svg id="fab-icon-open" viewBox="0 0 24 24" class="w-7 h-7 fill-white" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      <i id="fab-icon-close" data-lucide="x" class="w-6 h-6 text-white" style="display:none;"></i>
+    </button>
+
+  </div>
+
+
+  <!-- ============================================================
+       Scripts (orden: Lucide init → navbar → hero → contact → whatsapp)
+  ============================================================ -->
+  <script>
+    // Inicializar todos los iconos Lucide del DOM
+    lucide.createIcons();
+  </script>
+  <script src="js/navbar.js"></script>
+  <script src="js/hero.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/whatsapp.js"></script>
+
+</body>
+</html>

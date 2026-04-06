@@ -1,0 +1,112 @@
+/* ============================================================
+   globals.css — Incrometales Design System
+   ============================================================ */
+
+/* ----- Google Fonts ----- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* ----- CSS Variables ----- */
+:root {
+  --background:       #ffffff;
+  --foreground:       #1e2d52;
+  --card:             #ffffff;
+  --secondary:        #f0f4f8;
+  --muted-foreground: #6b7db3;
+  --border:           #d4dce8;
+
+  --brand-cyan:       #13d3fd;
+  --brand-blue:       #4f86f1;
+  --brand-magenta:    #661856;
+  --surface-dark:     #0d1b40;
+  --surface-darker:   #0a1535;
+}
+
+/* ----- Base ----- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ----- Semantic color utility classes (reemplaza tokens de Tailwind v4) ----- */
+.bg-background       { background-color: var(--background); }
+.bg-card             { background-color: var(--card); }
+.bg-secondary        { background-color: var(--secondary); }
+.text-foreground     { color: var(--foreground); }
+.text-muted-foreground { color: var(--muted-foreground); }
+.border-border       { border-color: var(--border); }
+
+/* ----- Brand utilities ----- */
+.brand-gradient {
+  background: linear-gradient(90deg, var(--brand-cyan), var(--brand-blue));
+}
+
+.brand-gradient-text {
+  background: linear-gradient(90deg, var(--brand-cyan), var(--brand-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-divider {
+  height: 3px;
+  background: var(--brand-magenta);
+}
+
+.industrial-pattern {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 255, 255, 0.025) 10px,
+    rgba(255, 255, 255, 0.025) 20px
+  );
+}
+
+/* ----- Text wrap utilities (no incluidas en Tailwind v3 CDN) ----- */
+.text-balance { text-wrap: balance; }
+.text-pretty  { text-wrap: pretty; }
+
+/* ----- Animations ----- */
+@keyframes progress-bar {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease forwards;
+}

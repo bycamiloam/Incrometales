@@ -1,0 +1,57 @@
+/* ============================================================
+   about.css — About / Nosotros Section
+   ============================================================ */
+
+#nosotros {
+  background-color: var(--secondary);
+  padding: 6rem 1rem;
+}
+
+/* Stat block */
+.stat-block {
+  background: linear-gradient(90deg, var(--brand-cyan), var(--brand-blue));
+  color: white;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: opacity 0.3s;
+}
+
+.stat-block:hover {
+  opacity: 0.9;
+}
+
+.stat-value {
+  font-size: 3rem;
+  font-weight: 900;
+  color: white;
+  flex-shrink: 0;
+  min-width: 80px;
+  line-height: 1;
+}
+
+.stat-label {
+  font-weight: 700;
+  font-size: 1rem;
+  color: white;
+}
+
+.stat-sublabel {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 0.125rem;
+}
+
+@media (max-width: 479px) {
+  .stat-block {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .stat-value {
+    font-size: 2rem;
+    min-width: auto;
+  }
+}

@@ -1,0 +1,53 @@
+/* ============================================================
+   why-us.css — Why Us / Diferencial Section
+   ============================================================ */
+
+#por-que-nosotros {
+  background: var(--surface-dark);
+  padding: 6rem 1rem;
+}
+
+/* Feature card */
+.feature-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.75rem;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.feature-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--brand-blue);
+}
+
+.feature-card-icon {
+  color: white;
+  margin-bottom: 1.25rem;
+}
+
+.feature-card h3 {
+  font-weight: 700;
+  color: white;
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.feature-card p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+/* Animated underline accent */
+.feature-card-accent {
+  margin-top: 1.25rem;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--brand-cyan), var(--brand-blue));
+  transition: width 0.3s;
+}
+
+.feature-card:hover .feature-card-accent {
+  width: 2rem;
+}
